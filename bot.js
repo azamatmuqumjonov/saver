@@ -40,12 +40,6 @@ bot.on('message', async (msg) => {
   const position = queue.length;
   console.log(`Запрос от @${userRequest.username} добавлен в очередь [${position}]`);
 
-  if (position === 1) {
-    bot.sendMessage(chatId, '🔄 Обрабатываю вашу ссылку, пожалуйста, подождите...', {
-      reply_to_message_id: msg.message_id,
-    });
-  }
-
   if (!isProcessing) {
     processQueue();
   }
